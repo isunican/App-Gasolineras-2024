@@ -3,9 +3,13 @@ package es.unican.gasolineras.activities.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.parceler.Parcels;
@@ -16,6 +20,7 @@ import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 import es.unican.gasolineras.R;
+import es.unican.gasolineras.activities.InfoView;
 import es.unican.gasolineras.activities.details.DetailsView;
 import es.unican.gasolineras.model.Gasolinera;
 import es.unican.gasolineras.repository.GasolinerasService;
@@ -38,6 +43,23 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
 
         presenter = new MainPresenter();
         presenter.init(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.menuItemInfo) {
+            presenter.onMenuInfoClicked();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -80,6 +102,7 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
 
     @Override
     public void showInfoActivity() {
-
+        Intent intent = new Intent(this, InfoView.class);
+        startActivity(intent);
     }
 }

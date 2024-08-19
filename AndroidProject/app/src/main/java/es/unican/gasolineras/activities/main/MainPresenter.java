@@ -25,7 +25,7 @@ public class MainPresenter implements IMainContract.Presenter {
 
     @Override
     public void onMenuInfoClicked() {
-
+        view.showInfoActivity();
     }
 
     private void load() {
