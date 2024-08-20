@@ -19,3 +19,7 @@ La aplicación inicial incluye funcionalidad básica para descargar y mostrar in
 La aplicación utiliza el patrón Model-View-Presenter. El diagrama de arquitectura inicial es el siguiente:
 
 ![](Docs/Models/arquitectura.svg)
+
+La actividad principal está compuesta por una vista (MainView) y un presenter (MainPresenter) que muestran una lista de gasolineras de Cantabria. La siguiente figura muestra el proceso de inicialización y obtención de las gasolineras.
+
+![](Docs/Models/main-secuencia.svg)
