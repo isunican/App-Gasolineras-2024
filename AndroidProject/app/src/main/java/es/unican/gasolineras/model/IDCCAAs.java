@@ -1,9 +1,9 @@
 package es.unican.gasolineras.model;
 
 /**
- * Static collection of Comunidades Autonomas ID's, as used by the RESt API
- * Alternatively, these ID's can also be fetched from the REST API itself,
- * using this endpoint: https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/
+ * Static collection of Comunidades Autonomas ID's, as used by the RESt API.
+ * The values of these ID's can be fetched from a dedicated
+ * <a href="https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/Listados/ComunidadesAutonomas/">endpoint</a>
  */
 public enum IDCCAAs {
 

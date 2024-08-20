@@ -9,13 +9,13 @@ import es.unican.gasolineras.repository.IRepository;
 import es.unican.gasolineras.repository.Repository;
 
 /**
- * This class is the provider of IRepository implementations
- * Any time somebody demands an IRepository, Hilt will inject the implementation
+ * This class is the provider of @link{IRepository} implementations
+ * Any time somebody demands an @link{IRepository} implementation, Hilt will inject the implementation
  * provided by this module
  *
- * InstalllIn: this tells Hilt that this is available to every Activity that is annotated with
- * @AndroidEntryPoint.
- * Alternatively I could use SingletonComponent.class, and it seems to work too
+ * InstalllIn: this tells Hilt that this moduke is available to every Activity that is annotated
+ * with AndroidEntryPoint. Instead of ActivityComponent.class, I could use SingletonComponent.class,
+ * and it seems to work too
  */
 @Module
 @InstallIn(ActivityComponent.class)
@@ -23,7 +23,7 @@ public abstract class RepositoriesModule {
 
     @Provides
     public static IRepository provideRepository() {
-        return new Repository(GasolinerasService.api);
+        return Repository.INSTANCE;
     }
 
 }

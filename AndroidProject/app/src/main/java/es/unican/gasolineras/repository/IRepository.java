@@ -1,7 +1,7 @@
 package es.unican.gasolineras.repository;
 
 /**
- * A repository to access Charging Stations
+ * A repository to retrieve gas stations
  */
 public interface IRepository {
 

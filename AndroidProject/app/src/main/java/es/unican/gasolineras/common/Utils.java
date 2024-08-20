@@ -16,14 +16,17 @@ import java.util.List;
 import es.unican.gasolineras.model.Gasolinera;
 import es.unican.gasolineras.model.GasolinerasResponse;
 
+/**
+ * Utility methods that may be used by several classes
+ */
 public class Utils {
 
     /**
      * Parses a list of gas stations from a json resource file.
      * The json must contain a serialized GasolinerasResponse object
-     * @param context
-     * @param jsonId
-     * @return
+     * @param context the application context
+     * @param jsonId the resource id of the json file
+     * @return list of gas stations parsed from the file
      */
     public static List<Gasolinera> parseGasolineras(Context context, int jsonId) {
         InputStream is = context.getResources().openRawResource(jsonId);

@@ -8,17 +8,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Implementation of @link{IRepository} that access the real
+ * <a href="https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help">Gasolineras API</a>
+ */
 public class Repository implements IRepository {
 
-    private final IGasolinerasAPI api;
+    /** Since this class does not have any state, it can be a singleton */
+    public static final IRepository INSTANCE = new Repository();
 
-    public Repository(IGasolinerasAPI api) {
-        this.api = api;
-    }
+    /** Singleton pattern with private constructor */
+    private Repository() {}
 
     @Override
     public void requestStations(ICallBack cb, String ccaa) {
-        Call<GasolinerasResponse> call = api.gasolineras(ccaa);
+        Call<GasolinerasResponse> call = GasolinerasService.api.gasolineras(ccaa);
         call.enqueue(new Callback<GasolinerasResponse>() {
             @Override
             public void onResponse(Call<GasolinerasResponse> call, Response<GasolinerasResponse> response) {

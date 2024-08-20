@@ -17,6 +17,9 @@ import java.util.List;
 import es.unican.gasolineras.R;
 import es.unican.gasolineras.model.Gasolinera;
 
+/**
+ * Adapter that renders the gas stations in each row of a ListView
+ */
 public class GasolinerasArrayAdapter extends ArrayAdapter<Gasolinera> {
 
     public GasolinerasArrayAdapter(@NonNull Context context, @NonNull List<Gasolinera> objects) {

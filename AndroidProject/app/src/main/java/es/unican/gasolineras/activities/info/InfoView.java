@@ -1,15 +1,15 @@
-package es.unican.gasolineras.activities;
+package es.unican.gasolineras.activities.info;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import es.unican.gasolineras.R;
 
+/**
+ * View that shows application general information. Since this view does not have business logic,
+ * it can be implemented as an activity directly, without the MVP pattern.
+ */
 public class InfoView extends AppCompatActivity {
 
     @Override

@@ -15,6 +15,9 @@ import java.util.Locale;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Service singletons for the <a href="https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help">Gasolineras service API</a>
+ */
 public class GasolinerasService {
 
     /** Open Charge Map API base URL*/
@@ -24,9 +27,8 @@ public class GasolinerasService {
     public static final Retrofit retrofit;
     public static final IGasolinerasAPI api;
 
-
     static {
-        // custo deserializer to support spanish format of float numbers (comma separator)
+        // custom deserializer to support spanish format of float numbers (with comma separator)
         deserializer = new JsonDeserializer<Double>() {
             @Override
             public Double deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {

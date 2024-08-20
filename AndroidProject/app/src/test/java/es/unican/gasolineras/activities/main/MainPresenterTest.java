@@ -51,6 +51,8 @@ public class MainPresenterTest {
     @Test
     public void test() {
         Context context = ApplicationProvider.getApplicationContext();
+
+        // Mock repository, with mocked callback that returns a list of gasolineras from the json
         IRepository mock = mock(IRepository.class);
         doAnswer(invocation ->  {
             ICallBack callBack = invocation.getArgument(0);
@@ -64,7 +66,6 @@ public class MainPresenterTest {
 
         ArgumentCaptor<List<Gasolinera>> captor = ArgumentCaptor.forClass(List.class);
         verify(view).showStations(captor.capture());
-
         List<Gasolinera> gasolineras = captor.getValue();
         assertEquals(gasolineras.get(0).getRotulo(), "CEPSA");
     }

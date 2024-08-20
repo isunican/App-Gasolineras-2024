@@ -7,14 +7,16 @@ import java.util.List;
 import lombok.Getter;
 
 /**
- * Model that represents the response obtained from the Gasolineras REST API:
- * https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help/operations/PreciosEESSTerrestres#response-json
+ * Model that represents the response obtained from the
+ * <a href="https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help/operations/PreciosEESSTerrestres#response-json">Gasolineras REST API</a>
  *
  * The API returns an object with these 4 properties: "fecha", "nota", "gasolineras", "consulta".
  * The actual list of gas stations is the property "gasolineras".
  *
  * The #SerializedName annotation is a GSON annotation that defines the name of the property
- * in the json file, as obtained from the REST API.
+ * as defined in the json response.
+ *
+ * Getters are automatically generated at compile time by Lombok.
  */
 @Getter
 public class GasolinerasResponse {
