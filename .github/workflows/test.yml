@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      
 jobs:
   android-unit-tests:
     name: Android Unit Tests
@@ -15,14 +16,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: "temurin"
           java-version: 17
           cache: "gradle"
 
       - name: Gradle cache
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Make gradlew executable
         working-directory: ./AndroidProject
@@ -36,7 +37,7 @@ jobs:
 
       - name: Android unit tests artifacts
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: unit-tests-artifacts
           path: ./AndroidProject/app/build/reports/tests/testDebugUnitTest/
@@ -50,14 +51,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: "temurin"
           java-version: 17
           cache: "gradle"
 
       - name: Gradle cache
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
 
       # I Need to make gradlew executable
       - name: Make gradlew executable
@@ -77,7 +78,7 @@ jobs:
 
       - name: Android UI tests artifacts
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ui-tests-artifacts
           path: ./AndroidProject/app/build/reports/androidTests/connected/
@@ -93,14 +94,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: "temurin"
           java-version: 17
           cache: "gradle"
 
       - name: Gradle cache
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Make gradlew executable
         working-directory: ./AndroidProject
@@ -111,7 +112,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Upload APK as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
           path: AndroidProject/app/build/outputs/apk/debug/app-debug.apk
