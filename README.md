@@ -12,9 +12,11 @@
 
 Este repositorio contiene el código inicial para el Proyecto Integrado 2024.
 
-La información relativa al Proyecto Integrado, y las asignaturas que lo componen, se puede encontrar en esta [Wiki](https://github.com/isunican/docsProyectoIntegrado/wiki)
+La información relativa al Proyecto Integrado, y las asignaturas que lo componen, se puede encontrar en la [Wiki](https://github.com/isunican/docsProyectoIntegrado/wiki).
 
-La aplicación inicial incluye funcionalidad básica para descargar y mostrar información sobre gasolineras, utilizando el servicio oficial del [Ministerio](https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help)
+La aplicación inicial incluye funcionalidad básica para descargar y mostrar información sobre gasolineras, utilizando el servicio REST oficial del [Ministerio](https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help).
+
+Información sobre este servicio REST puede encontrarse en [este documento](servicio-gasolineras.md).
 
 La aplicación utiliza el patrón Model-View-Presenter. El diagrama de arquitectura inicial es el siguiente:
 
