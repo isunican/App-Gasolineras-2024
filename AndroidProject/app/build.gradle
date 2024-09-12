@@ -94,7 +94,7 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
-    // Parceler (automatically implemente methods to create parcels
+    // Parceler (automatically implements methods to create parcels)
     implementation libs.parceler.api
     annotationProcessor libs.parceler
 
