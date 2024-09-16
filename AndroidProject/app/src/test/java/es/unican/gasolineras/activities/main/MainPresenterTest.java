@@ -49,6 +49,7 @@ public class MainPresenterTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void test() {
         Context context = ApplicationProvider.getApplicationContext();
 
