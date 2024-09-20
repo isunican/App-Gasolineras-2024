@@ -1,4 +1,4 @@
-# Información sobre cada Gasolinera:
+# Información sobre cada Gasolinera
 
 <table>
 <colgroup>
@@ -170,6 +170,8 @@ envío</a></td>
 
 <https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help>
 
+### Resumen de Endpoints
+
 <table>
 <colgroup>
 <col style="width: 29%" />
@@ -215,7 +217,7 @@ envío</a></td>
 </tbody>
 </table>
 
-Endpoints:
+### Endpoints
 
 <table>
 <colgroup>
@@ -313,4 +315,212 @@ Endpoints:
 <td>PostesMaritimos/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}</td>
 </tr>
 </tbody>
+</table>
+
+### Productos Disponibles
+
+<table>
+  <thead>
+    <tr>
+      <th>IDProducto</th>
+      <th>NombreProducto</th>
+      <th>NombreProductoAbreviatura</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Gasolina 95 E5</td>
+      <td>G95E5</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Gasolina 95 E10</td>
+      <td>G95E10</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Gasolina 95 E5 Premium</td>
+      <td>G95E5+</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Gasolina 98 E5</td>
+      <td>G98E5</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Gasolina 98 E10</td>
+      <td>G98E10</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Gasóleo A habitual</td>
+      <td>GOA</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Gasóleo Premium</td>
+      <td>GOA+</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Gasóleo B</td>
+      <td>GOB</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Gasóleo C</td>
+      <td>GOC</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Bioetanol</td>
+      <td>BIE</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Biodiésel</td>
+      <td>BIO</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Gases licuados del petróleo</td>
+      <td>GLP</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Gas natural comprimido</td>
+      <td>GNC</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Gas natural licuado</td>
+      <td>GNL</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Hidrógeno</td>
+      <td>H2</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Fuelóleo bajo índice azufre</td>
+      <td>FOB</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Fuelóleo especial</td>
+      <td>FOE</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Gasóleo para uso marítimo</td>
+      <td>MGO</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Gasolina de aviación</td>
+      <td>GNAV</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Queroseno de aviación JET_A1</td>
+      <td>JETA1</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Queroseno de aviación JET_A2</td>
+      <td>JETA2</td>
+    </tr>
+  </tbody>
+</table>
+
+### Comunidades Autónomas
+
+<table>
+  <thead>
+    <tr>
+      <th>IDCCAA</th>
+      <th>CCAA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td>Andalucia</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Aragón</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>Asturias</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td>Baleares</td>
+    </tr>
+    <tr>
+      <td>05</td>
+      <td>Canarias</td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td>Cantabria</td>
+    </tr>
+    <tr>
+      <td>07</td>
+      <td>Castilla la Mancha</td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td>Castilla y León</td>
+    </tr>
+    <tr>
+      <td>09</td>
+      <td>Cataluña</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Comunidad Valenciana</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Extremadura</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Galicia</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Madrid</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Murcia</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Navarra</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>País Vasco</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Rioja (La)</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Ceuta</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Melilla</td>
+    </tr>
+  </tbody>
 </table>
