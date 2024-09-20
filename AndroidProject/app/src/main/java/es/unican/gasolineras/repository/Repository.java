@@ -1,5 +1,7 @@
 package es.unican.gasolineras.repository;
 
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
 import es.unican.gasolineras.model.Gasolinera;
@@ -20,18 +22,25 @@ public class Repository implements IRepository {
     /** Singleton pattern with private constructor */
     private Repository() {}
 
+    /**
+     * Request gas stations from the Gasolineras real API.
+     * @see IRepository#requestStations(ICallBack, String)
+     * @param cb the callback that will asynchronously process the returned gas stations
+     * @param ccaa id of the "comunidad autonoma"
+     */
     @Override
     public void requestStations(ICallBack cb, String ccaa) {
         Call<GasolinerasResponse> call = GasolinerasService.api.gasolineras(ccaa);
         call.enqueue(new Callback<GasolinerasResponse>() {
             @Override
-            public void onResponse(Call<GasolinerasResponse> call, Response<GasolinerasResponse> response) {
+            public void onResponse(@NonNull Call<GasolinerasResponse> call, @NonNull Response<GasolinerasResponse> response) {
                 GasolinerasResponse body = response.body();
+                assert body != null;  // to avoid warning in the following line
                 cb.onSuccess(body.getGasolineras());
             }
 
             @Override
-            public void onFailure(Call<GasolinerasResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<GasolinerasResponse> call, @NonNull Throwable t) {
                 cb.onFailure(t);
             }
         });

@@ -1,11 +1,15 @@
 package es.unican.gasolineras.activities.main;
 
+import static java.util.Collections.emptyList;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,19 +24,48 @@ import es.unican.gasolineras.model.Gasolinera;
 /**
  * Adapter that renders the gas stations in each row of a ListView
  */
-public class GasolinerasArrayAdapter extends ArrayAdapter<Gasolinera> {
+public class GasolinerasArrayAdapter extends BaseAdapter {
 
+    /** The list of gas stations to render */
+    private final List<Gasolinera> gasolineras;
+
+    /** Context of the application */
+    private final Context context;
+
+    /**
+     * Constructs an adapter to handle a list of gasolineras
+     * @param context the application context
+     * @param objects the list of gas stations
+     */
     public GasolinerasArrayAdapter(@NonNull Context context, @NonNull List<Gasolinera> objects) {
-        super(context, 0, objects);
+        // we know the parameters are not null because of the @NonNull annotation
+        this.gasolineras = objects;
+        this.context = context;
     }
 
+    @Override
+    public int getCount() {
+        return gasolineras.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return gasolineras.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @SuppressLint("DiscouragedApi")  // to remove warnings about using getIdentifier
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Gasolinera gasolinera = getItem(position);
+        Gasolinera gasolinera = (Gasolinera) getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext())
+            convertView = LayoutInflater.from(context)
                     .inflate(R.layout.activity_main_list_item, parent, false);
         }
 
@@ -40,15 +73,15 @@ public class GasolinerasArrayAdapter extends ArrayAdapter<Gasolinera> {
         {
             String rotulo = gasolinera.getRotulo().toLowerCase();
 
-            int imageID = getContext().getResources()
-                    .getIdentifier(rotulo, "drawable", getContext().getPackageName());
+            int imageID = context.getResources()
+                    .getIdentifier(rotulo, "drawable", context.getPackageName());
 
             // Si el rotulo son sólo numeros, el método getIdentifier simplemente devuelve
             // como imageID esos números, pero eso va a fallar porque no tendré ningún recurso
             // que coincida con esos números
             if (imageID == 0 || TextUtils.isDigitsOnly(rotulo)) {
-                imageID = getContext().getResources()
-                        .getIdentifier("generic", "drawable", getContext().getPackageName());
+                imageID = context.getResources()
+                        .getIdentifier("generic", "drawable", context.getPackageName());
             }
 
             if (imageID != 0) {
@@ -72,8 +105,8 @@ public class GasolinerasArrayAdapter extends ArrayAdapter<Gasolinera> {
         // gasolina 95 price
         {
             TextView tvLabel = convertView.findViewById(R.id.tv95Label);
-            String label = getContext().getResources().getString(R.string.gasolina95label);
-            tvLabel.setText(label + ":");
+            String label = context.getResources().getString(R.string.gasolina95label);
+            tvLabel.setText(String.format("%s:", label));
 
             TextView tv = convertView.findViewById(R.id.tv95);
             tv.setText(String.valueOf(gasolinera.getGasolina95E5()));
@@ -82,8 +115,8 @@ public class GasolinerasArrayAdapter extends ArrayAdapter<Gasolinera> {
         // diesel A price
         {
             TextView tvLabel = convertView.findViewById(R.id.tvDieselALabel);
-            String label = getContext().getResources().getString(R.string.dieselAlabel);
-            tvLabel.setText(label + ":");
+            String label = context.getResources().getString(R.string.dieselAlabel);
+            tvLabel.setText(String.format("%s:", label));
 
             TextView tv = convertView.findViewById(R.id.tvDieselA);
             tv.setText(String.valueOf(gasolinera.getGasoleoA()));

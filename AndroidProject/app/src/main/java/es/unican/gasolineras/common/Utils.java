@@ -23,7 +23,8 @@ public class Utils {
 
     /**
      * Parses a list of gas stations from a json resource file.
-     * The json must contain a serialized GasolinerasResponse object
+     * The json must contain a serialized GasolinerasResponse object.
+     * It uses GSON to parse the json file
      * @param context the application context
      * @param jsonId the resource id of the json file
      * @return list of gas stations parsed from the file

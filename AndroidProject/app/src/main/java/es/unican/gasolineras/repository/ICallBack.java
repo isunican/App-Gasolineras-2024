@@ -4,7 +4,6 @@ import java.util.List;
 
 import es.unican.gasolineras.model.Gasolinera;
 
-
 /**
  * The callback used by the repository to asynchronously retrieve gas stations.
  */
