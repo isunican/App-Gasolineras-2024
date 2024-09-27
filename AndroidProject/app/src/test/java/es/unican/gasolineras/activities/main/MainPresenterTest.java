@@ -63,15 +63,6 @@ public class MainPresenterTest {
             return null;
         }).when(mock).requestStations(any(ICallBack.class), any(String.class));
 
-        doAnswer(new Answer() {
-            @Override
-            public Object answer(InvocationOnMock invocation) throws Throwable {
-                ICallBack callBack = invocation.getArgument(0);
-                callBack.onSuccess(Utils.parseGasolineras(context, R.raw.gasolineras_ccaa_06));
-                return null;
-            }
-        }).when(mock).requestStations(any(ICallBack.class), any(String.class));
-
         when(view.getRepository()).thenReturn(mock);
         sut.init(view);
         verify(view, times(1)).showStations(anyList());
