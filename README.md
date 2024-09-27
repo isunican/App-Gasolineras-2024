@@ -25,3 +25,5 @@ La aplicación utiliza el patrón Model-View-Presenter. El diagrama de arquitect
 La actividad principal está compuesta por una vista (MainView) y un presenter (MainPresenter) que muestran una lista de gasolineras de Cantabria. La siguiente figura muestra el proceso de inicialización y obtención de las gasolineras.
 
 ![](Docs/Models/main-secuencia.svg)
+
+![](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/isunican/App-CarChargers-2023/refs/heads/master/Docs/Models/arquitectura.puml?token=GHSAT0AAAAAACWJAGQ4MNLQOIXWYW3TPP5WZXWQKZA)

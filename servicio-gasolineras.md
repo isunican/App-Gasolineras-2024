@@ -166,158 +166,7 @@ envío</a></td>
 </tbody>
 </table>
 
-# Servicios Disponibles
-
-<https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help>
-
-### Resumen de Endpoints
-
-<table>
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 34%" />
-<col style="width: 36%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Título</strong></th>
-<th><strong>Descripción</strong></th>
-<th><strong>Filtros</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>EstacionesTerrestres</td>
-<td>Estaciones de servicio para vehículos</td>
-<td rowspan="3"><p>Todas</p>
-<p>Filtro Comunidad</p>
-<p>Filtro Municipio</p>
-<p>Filtro Provincia</p>
-<p>(+ filtro producto)</p></td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestresHist</td>
-<td><p>Información de Estaciones de servicio en una fecha</p>
-<p>Formato: 13-08-2024</p></td>
-</tr>
-<tr class="odd">
-<td>PostesMaritimos</td>
-<td>Estaciones para barcos</td>
-</tr>
-<tr class="even">
-<td>Listados</td>
-<td>Listado de constantes</td>
-<td><p>Comunidades Autónomas</p>
-<p>Municipios</p>
-<p>Municipios en Provincia</p>
-<p>Productos</p>
-<p>Provincias</p>
-<p>Provincias en Comunidad</p></td>
-</tr>
-</tbody>
-</table>
-
-### Endpoints
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>EstacionesTerrestres/</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestres/FiltroCCAA/{IDCCAA}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestres/FiltroCCAAProducto/{IDCCAA}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestres/FiltroMunicipio/{IDMunicipio}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestres/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestres/FiltroProducto/{IDProducto}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestres/FiltroProvincia/{IDProvincia}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestres/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestresHist/{FECHA}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestresHist/FiltroCCAA/{FECHA}/{IDCCAA}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestresHist/FiltroCCAAProducto/{FECHA}/{IDCCAA}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestresHist/FiltroMunicipio/{FECHA}/{IDMunicipio}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestresHist/FiltroMunicipioProducto/{FECHA}/{IDMunicipio}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestresHist/FiltroProducto/{FECHA}/{IDProducto}</td>
-</tr>
-<tr class="even">
-<td>EstacionesTerrestresHist/FiltroProvincia/{FECHA}/{IDProvincia}</td>
-</tr>
-<tr class="odd">
-<td>EstacionesTerrestresHist/FiltroProvinciaProducto/{FECHA}/{IDProvincia}/{IDProducto}</td>
-</tr>
-<tr class="even">
-<td>Listados/ComunidadesAutonomas/</td>
-</tr>
-<tr class="odd">
-<td>Listados/Municipios/</td>
-</tr>
-<tr class="even">
-<td>Listados/MunicipiosPorProvincia/{IDProvincia}</td>
-</tr>
-<tr class="odd">
-<td>Listados/ProductosPetroliferos/</td>
-</tr>
-<tr class="even">
-<td>Listados/Provincias/</td>
-</tr>
-<tr class="odd">
-<td>Listados/ProvinciasPorComunidad/{IDCCAA}</td>
-</tr>
-<tr class="even">
-<td>PostesMaritimos/</td>
-</tr>
-<tr class="odd">
-<td>PostesMaritimos/FiltroCCAA/{IDCCAA}</td>
-</tr>
-<tr class="even">
-<td>PostesMaritimos/FiltroCCAAProducto/{IDCCAA}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>PostesMaritimos/FiltroMunicipio/{IDMunicipio}</td>
-</tr>
-<tr class="even">
-<td>PostesMaritimos/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}</td>
-</tr>
-<tr class="odd">
-<td>PostesMaritimos/FiltroProducto/{IDProducto}</td>
-</tr>
-<tr class="even">
-<td>PostesMaritimos/FiltroProvincia/{IDProvincia}</td>
-</tr>
-<tr class="odd">
-<td>PostesMaritimos/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}</td>
-</tr>
-</tbody>
-</table>
-
-### Productos Disponibles
+## Productos Disponibles
 
 <table>
   <thead>
@@ -436,7 +285,7 @@ envío</a></td>
   </tbody>
 </table>
 
-### Comunidades Autónomas
+## Comunidades Autónomas
 
 <table>
   <thead>
@@ -524,3 +373,156 @@ envío</a></td>
     </tr>
   </tbody>
 </table>
+
+
+# Servicios Disponibles
+
+<https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/help>
+
+## Resumen de Endpoints
+
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 34%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Título</strong></th>
+<th><strong>Descripción</strong></th>
+<th><strong>Filtros</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EstacionesTerrestres</td>
+<td>Estaciones de servicio para vehículos</td>
+<td rowspan="3"><p>Todas</p>
+<p>Filtro Comunidad</p>
+<p>Filtro Municipio</p>
+<p>Filtro Provincia</p>
+<p>(+ filtro producto)</p></td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestresHist</td>
+<td><p>Información de Estaciones de servicio en una fecha</p>
+<p>Formato: 13-08-2024</p></td>
+</tr>
+<tr class="odd">
+<td>PostesMaritimos</td>
+<td>Estaciones para barcos</td>
+</tr>
+<tr class="even">
+<td>Listados</td>
+<td>Listado de constantes</td>
+<td><p>Comunidades Autónomas</p>
+<p>Municipios</p>
+<p>Municipios en Provincia</p>
+<p>Productos</p>
+<p>Provincias</p>
+<p>Provincias en Comunidad</p></td>
+</tr>
+</tbody>
+</table>
+
+## Endpoints
+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>EstacionesTerrestres/</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestres/FiltroCCAA/{IDCCAA}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestres/FiltroCCAAProducto/{IDCCAA}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestres/FiltroMunicipio/{IDMunicipio}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestres/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestres/FiltroProducto/{IDProducto}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestres/FiltroProvincia/{IDProvincia}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestres/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestresHist/{FECHA}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestresHist/FiltroCCAA/{FECHA}/{IDCCAA}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestresHist/FiltroCCAAProducto/{FECHA}/{IDCCAA}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestresHist/FiltroMunicipio/{FECHA}/{IDMunicipio}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestresHist/FiltroMunicipioProducto/{FECHA}/{IDMunicipio}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestresHist/FiltroProducto/{FECHA}/{IDProducto}</td>
+</tr>
+<tr class="even">
+<td>EstacionesTerrestresHist/FiltroProvincia/{FECHA}/{IDProvincia}</td>
+</tr>
+<tr class="odd">
+<td>EstacionesTerrestresHist/FiltroProvinciaProducto/{FECHA}/{IDProvincia}/{IDProducto}</td>
+</tr>
+<tr class="even">
+<td>Listados/ComunidadesAutonomas/</td>
+</tr>
+<tr class="odd">
+<td>Listados/Municipios/</td>
+</tr>
+<tr class="even">
+<td>Listados/MunicipiosPorProvincia/{IDProvincia}</td>
+</tr>
+<tr class="odd">
+<td>Listados/ProductosPetroliferos/</td>
+</tr>
+<tr class="even">
+<td>Listados/Provincias/</td>
+</tr>
+<tr class="odd">
+<td>Listados/ProvinciasPorComunidad/{IDCCAA}</td>
+</tr>
+<tr class="even">
+<td>PostesMaritimos/</td>
+</tr>
+<tr class="odd">
+<td>PostesMaritimos/FiltroCCAA/{IDCCAA}</td>
+</tr>
+<tr class="even">
+<td>PostesMaritimos/FiltroCCAAProducto/{IDCCAA}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>PostesMaritimos/FiltroMunicipio/{IDMunicipio}</td>
+</tr>
+<tr class="even">
+<td>PostesMaritimos/FiltroMunicipioProducto/{IDMunicipio}/{IDProducto}</td>
+</tr>
+<tr class="odd">
+<td>PostesMaritimos/FiltroProducto/{IDProducto}</td>
+</tr>
+<tr class="even">
+<td>PostesMaritimos/FiltroProvincia/{IDProvincia}</td>
+</tr>
+<tr class="odd">
+<td>PostesMaritimos/FiltroProvinciaProducto/{IDProvincia}/{IDProducto}</td>
+</tr>
+</tbody>
+</table>
+
