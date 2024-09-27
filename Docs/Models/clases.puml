@@ -1,0 +1,30 @@
+@startuml clases
+
+hide empty members
+
+interface IMainContract#View {
+    + init()
+    + getRepository() : IRepository
+    + showStations(List<Gasolinera> stations)
+    + showLoadCorrect(int stations)
+    + showLoadError()
+    + showStationDetails(Gasolinera station)
+    + showInfoActivity()
+}
+
+interface IMainContract#Presenter {
+    + init(View view)
+    + onStationClicked(Gasolinera station)
+    + onMenuInfoClicked()
+}
+
+interface IRepository {
+    + requestStations(ICallBack cb, String ccaa)
+}
+
+interface ICallBack {
+    + onSuccess(List<Gasolinera> gasolineras)
+    + onFailure(Throwable e)
+}
+
+@enduml
