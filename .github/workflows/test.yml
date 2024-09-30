@@ -79,7 +79,7 @@ jobs:
         working-directory: ./AndroidProject
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: ./gradlew jacocoTestReport sonarqube
+        run: ./gradlew jacocoTestReport sonar
 
       - name: Android tests reports
         if: always()
@@ -88,38 +88,38 @@ jobs:
           name: test-artifacts
           path: ./AndroidProject/app/build/reports/
 
-  build:
-    name: Build APK
-    runs-on: ubuntu-22.04
-    needs: [android-ui-tests]
-    if: github.ref == 'refs/heads/main'
+  # build:
+  #   name: Build APK
+  #   runs-on: ubuntu-22.04
+  #   needs: [android-ui-tests]
+  #   if: github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin"
-          java-version: 17
-          cache: "gradle"
+  #     - name: Set up JDK 17
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         distribution: "temurin"
+  #         java-version: 17
+  #         cache: "gradle"
 
-      - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
+  #     - name: Gradle cache
+  #       uses: gradle/actions/setup-gradle@v3
 
-      - name: Make gradlew executable
-        working-directory: ./AndroidProject
-        run: chmod +x ./gradlew
+  #     - name: Make gradlew executable
+  #       working-directory: ./AndroidProject
+  #       run: chmod +x ./gradlew
 
-      - name: Build APK
-        working-directory: ./AndroidProject
-        run: ./gradlew assembleDebug
+  #     - name: Build APK
+  #       working-directory: ./AndroidProject
+  #       run: ./gradlew assembleDebug
 
-      - name: Upload APK as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug-apk
-          path: AndroidProject/app/build/outputs/apk/debug/app-debug.apk
+  #     - name: Upload APK as artifact
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: app-debug-apk
+  #         path: AndroidProject/app/build/outputs/apk/debug/app-debug.apk
 
 
