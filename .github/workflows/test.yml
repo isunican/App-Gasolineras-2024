@@ -91,7 +91,7 @@ jobs:
   build:
     name: Build APK
     runs-on: ubuntu-22.04
-    needs: [android-unit-tests, android-ui-tests]
+    needs: [android-ui-tests]
     if: github.ref == 'refs/heads/main'
 
     steps:
