@@ -1,6 +1,19 @@
 @startuml clases
 
 hide empty members
+skinparam linetype polyline
+skinparam arrowLollipopColor #ADD1B2
+
+MainView -right(0- MainPresenter : IMainContract.Presenter
+MainView -right0)- MainPresenter : IMainContract.View
+MainView -up..-> InfoView : <<use>>
+MainView -down..> DetailsView : <<use>>
+MainPresenter -right(0- Repository : IRepository
+
+
+class MainPresenter {
+    -load()
+}
 
 interface IMainContract#View {
     + init()
@@ -26,5 +39,6 @@ interface ICallBack {
     + onSuccess(List<Gasolinera> gasolineras)
     + onFailure(Throwable e)
 }
+
 
 @enduml

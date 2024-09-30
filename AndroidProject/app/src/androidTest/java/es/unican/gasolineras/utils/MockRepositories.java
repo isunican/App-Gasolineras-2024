@@ -10,11 +10,21 @@ import es.unican.gasolineras.common.Utils;
 import es.unican.gasolineras.repository.ICallBack;
 import es.unican.gasolineras.repository.IRepository;
 
+/**
+ * Mock repositories for UI tests.
+ */
 public class MockRepositories {
 
+    /**
+     * Create a mock repository that uses the data in the given json resource
+     *
+     * @param context application context
+     * @param jsonId  json raw file id
+     * @return mock repository
+     */
     public static IRepository getTestRepository(Context context, int jsonId) {
         IRepository mock = mock(IRepository.class);
-        doAnswer(invocation ->  {
+        doAnswer(invocation -> {
             ICallBack callBack = invocation.getArgument(0);
             callBack.onSuccess(Utils.parseGasolineras(context, jsonId));
             return null;
