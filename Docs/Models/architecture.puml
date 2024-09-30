@@ -8,7 +8,7 @@ MainView -right(0- MainPresenter : IMainContract.Presenter
 MainView -right0)- MainPresenter : IMainContract.View
 MainView -up..-> InfoView : <<use>>
 MainView -down..> DetailsView : <<use>>
-MainPresenter -right(0- Repository : IRepository
+MainPresenter -right(0- GasolinerasRepository : IGasolinerasRepository
 
 
 class MainPresenter {
@@ -17,7 +17,7 @@ class MainPresenter {
 
 interface IMainContract#View {
     + init()
-    + getRepository() : IRepository
+    + getGasolinerasRepository() : IGasolinerasRepository
     + showStations(List<Gasolinera> stations)
     + showLoadCorrect(int stations)
     + showLoadError()
@@ -31,8 +31,8 @@ interface IMainContract#Presenter {
     + onMenuInfoClicked()
 }
 
-interface IRepository {
-    + requestStations(ICallBack cb, String ccaa)
+interface IGasolinerasRepository {
+    + requestGasolineras(ICallBack cb, String ccaa)
 }
 
 interface ICallBack {

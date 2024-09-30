@@ -3,7 +3,7 @@ package es.unican.gasolineras.activities.main;
 import java.util.List;
 
 import es.unican.gasolineras.model.Gasolinera;
-import es.unican.gasolineras.repository.IRepository;
+import es.unican.gasolineras.repository.IGasolinerasRepository;
 
 /**
  * The Presenter-View contract for the Main activity.
@@ -61,7 +61,7 @@ public interface IMainContract {
          * Only the Presenter should call this method
          * @return
          */
-        public IRepository getRepository();
+        public IGasolinerasRepository getGasolinerasRepository();
 
         /**
          * The view is requested to display the given list of gas stations.

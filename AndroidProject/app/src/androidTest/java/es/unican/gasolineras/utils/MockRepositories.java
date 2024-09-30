@@ -8,7 +8,7 @@ import android.content.Context;
 
 import es.unican.gasolineras.common.Utils;
 import es.unican.gasolineras.repository.ICallBack;
-import es.unican.gasolineras.repository.IRepository;
+import es.unican.gasolineras.repository.IGasolinerasRepository;
 
 /**
  * Mock repositories for UI tests.
@@ -22,13 +22,13 @@ public class MockRepositories {
      * @param jsonId  json raw file id
      * @return mock repository
      */
-    public static IRepository getTestRepository(Context context, int jsonId) {
-        IRepository mock = mock(IRepository.class);
+    public static IGasolinerasRepository getTestRepository(Context context, int jsonId) {
+        IGasolinerasRepository mock = mock(IGasolinerasRepository.class);
         doAnswer(invocation -> {
             ICallBack callBack = invocation.getArgument(0);
             callBack.onSuccess(Utils.parseGasolineras(context, jsonId));
             return null;
-        }).when(mock).requestStations(any(ICallBack.class), any(String.class));
+        }).when(mock).requestGasolineras(any(ICallBack.class), any(String.class));
         return mock;
     }
 

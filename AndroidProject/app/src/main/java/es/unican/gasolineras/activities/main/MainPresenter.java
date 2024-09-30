@@ -5,7 +5,7 @@ import java.util.List;
 import es.unican.gasolineras.model.Gasolinera;
 import es.unican.gasolineras.model.IDCCAAs;
 import es.unican.gasolineras.repository.ICallBack;
-import es.unican.gasolineras.repository.IRepository;
+import es.unican.gasolineras.repository.IGasolinerasRepository;
 
 /**
  * The presenter of the main activity of the application. It controls {@link MainView}
@@ -47,7 +47,7 @@ public class MainPresenter implements IMainContract.Presenter {
      * Loads the gas stations from the repository, and sends them to the view
      */
     private void load() {
-        IRepository repository = view.getRepository();
+        IGasolinerasRepository repository = view.getGasolinerasRepository();
 
         ICallBack callBack = new ICallBack() {
 
@@ -62,6 +62,6 @@ public class MainPresenter implements IMainContract.Presenter {
             }
         };
 
-        repository.requestStations(callBack, IDCCAAs.CANTABRIA.id);
+        repository.requestGasolineras(callBack, IDCCAAs.CANTABRIA.id);
     }
 }

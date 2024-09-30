@@ -23,7 +23,7 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 import dagger.hilt.android.testing.UninstallModules;
 import es.unican.gasolineras.activities.main.MainView;
 import es.unican.gasolineras.injection.RepositoriesModule;
-import es.unican.gasolineras.repository.IRepository;
+import es.unican.gasolineras.repository.IGasolinerasRepository;
 
 @UninstallModules(RepositoriesModule.class)
 @HiltAndroidTest
@@ -40,7 +40,7 @@ public class ExampleUITest {
 
     // Mock repository that provides data from a JSON file instead of downloading it from the internet.
     @BindValue
-    final IRepository repository = getTestRepository(context, R.raw.gasolineras_ccaa_06);
+    final IGasolinerasRepository repository = getTestRepository(context, R.raw.gasolineras_ccaa_06);
 
     @Test
     public void showStationsTest() {

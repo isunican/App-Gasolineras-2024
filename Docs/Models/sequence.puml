@@ -5,7 +5,7 @@ skinparam ParticipantPadding 20
 
 participant MainView
 participant MainPresenter
-participant Repository
+participant GasolinerasRepository
 participant IGasolinerasAPI
 
 box "Internet" #lavenderblush
@@ -26,14 +26,14 @@ MainPresenter <-- MainView : //finished//
 
 MainPresenter -> MainPresenter : load()
 
-MainPresenter -> Repository : requestStations()
+MainPresenter -> GasolinerasRepository : requestGasolineras()
 
 deactivate MainView
 deactivate MainPresenter
-activate Repository
+activate GasolinerasRepository
 
-Repository -> IGasolinerasAPI : gasolineras()
-deactivate Repository
+GasolinerasRepository -> IGasolinerasAPI : gasolineras()
+deactivate GasolinerasRepository
 activate IGasolinerasAPI
 
 IGasolinerasAPI -->(20) Ministerio
@@ -46,12 +46,12 @@ Ministerio -->(20) IGasolinerasAPI
 activate IGasolinerasAPI
 note right: Data is provided
 
-IGasolinerasAPI --> Repository : [gasolineras]
+IGasolinerasAPI --> GasolinerasRepository : [gasolineras]
 deactivate IGasolinerasAPI
-activate Repository
+activate GasolinerasRepository
 
-Repository --> MainPresenter : [gasolineras]
-deactivate Repository
+GasolinerasRepository --> MainPresenter : [gasolineras]
+deactivate GasolinerasRepository
 activate MainPresenter
 
 MainPresenter -> MainView : showStations()

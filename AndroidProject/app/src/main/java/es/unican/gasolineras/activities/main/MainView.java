@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -23,7 +22,7 @@ import es.unican.gasolineras.R;
 import es.unican.gasolineras.activities.info.InfoView;
 import es.unican.gasolineras.activities.details.DetailsView;
 import es.unican.gasolineras.model.Gasolinera;
-import es.unican.gasolineras.repository.IRepository;
+import es.unican.gasolineras.repository.IGasolinerasRepository;
 
 /**
  * The main view of the application. It shows a list of gas stations.
@@ -35,7 +34,8 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
     private MainPresenter presenter;
 
     /** The repository to access the data. This is automatically injected by Hilt in this class */
-    @Inject IRepository repository;
+    @Inject
+    IGasolinerasRepository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,11 +96,11 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
     }
 
     /**
-     * @see IMainContract.View#getRepository()
+     * @see IMainContract.View#getGasolinerasRepository()
      * @return the repository to access the data
      */
     @Override
-    public IRepository getRepository() {
+    public IGasolinerasRepository getGasolinerasRepository() {
         return repository;
     }
 
