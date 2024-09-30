@@ -16,7 +16,7 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*'] // needed to support roboelectric with jacoco
 }
 
-task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
+task jacocoTestReport(type: JacocoReport) {
 
     reports {
         xml.required = true
@@ -29,7 +29,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
 
     sourceDirectories.setFrom(files([mainSrc]))
     classDirectories.setFrom(files([javaTree]))
-    executionData.setFrom(fileTree(dir: project.buildDir, includes: ['jacoco/testDebugUnitTest.exec', 'outputs/code-coverage/connected/*coverage.ec']))
+    executionData.setFrom(fileTree(dir: project.buildDir, includes: ['outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec', 'outputs/code_coverage/debugAndroidTest/connected/*/coverage.ec']))
 }
 
 sonar {
@@ -58,6 +58,11 @@ android {
         unitTests {
             includeAndroidResources = true
         }
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
     }
 
     defaultConfig {
@@ -76,6 +81,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
+            enableUnitTestCoverage true
         }
     }
     compileOptions {
