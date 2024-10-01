@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,7 +122,7 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
      */
     @Override
     public void showLoadCorrect(int stations) {
-
+        Toast.makeText(this, "Cargadas " + stations + " gasolineras", Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -129,7 +130,7 @@ public class MainView extends AppCompatActivity implements IMainContract.View {
      */
     @Override
     public void showLoadError() {
-
+        Toast.makeText(this, "Error cargando las gasolineras", Toast.LENGTH_SHORT).show();
     }
 
     /**

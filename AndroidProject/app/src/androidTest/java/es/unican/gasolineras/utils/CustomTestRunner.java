@@ -9,6 +9,7 @@ import dagger.hilt.android.testing.HiltTestApplication;
 
 /**
  * A custom runner to support dependency injection in UI Tests.
+ * This is linked in the module testInstrumentationRunner (module build.gradle file)
  */
 public final class CustomTestRunner extends AndroidJUnitRunner {
 

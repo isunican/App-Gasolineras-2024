@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Parcel;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * A Gas Station.
@@ -18,6 +19,7 @@ import lombok.Getter;
  */
 @Parcel
 @Getter
+@Setter
 public class Gasolinera {
 
     @SerializedName("IDEESS")                       protected String id;

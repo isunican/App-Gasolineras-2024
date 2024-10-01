@@ -42,7 +42,8 @@ jobs:
   #         name: unit-tests-artifacts
   #         path: ./AndroidProject/app/build/reports/tests/testDebugUnitTest/
 
-  android-ui-tests:
+  # Run unit and ui tests together, to capture the test coverage of both
+  android-tests:
     name: Android UI Tests
     runs-on: macos-13
 
@@ -91,7 +92,7 @@ jobs:
   # build:
   #   name: Build APK
   #   runs-on: ubuntu-22.04
-  #   needs: [android-ui-tests]
+  #   needs: [android-tests]
   #   if: github.ref == 'refs/heads/main'
 
   #   steps:

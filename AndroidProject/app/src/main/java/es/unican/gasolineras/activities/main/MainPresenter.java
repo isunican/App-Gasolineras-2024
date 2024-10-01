@@ -54,10 +54,12 @@ public class MainPresenter implements IMainContract.Presenter {
             @Override
             public void onSuccess(List<Gasolinera> stations) {
                 view.showStations(stations);
+                view.showLoadCorrect(stations.size());
             }
 
             @Override
             public void onFailure(Throwable e) {
+                view.showLoadError();
                 view.showLoadError();
             }
         };

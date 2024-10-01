@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 
-import es.unican.gasolineras.model.Dummy;
+import es.unican.gasolineras.model.Gasolinera;
 
 @RunWith(RobolectricTestRunner.class)
 public class ExampleTest {
@@ -18,11 +18,9 @@ public class ExampleTest {
     @Test
     public void test() {
         Context context = ApplicationProvider.getApplicationContext();
-        assertEquals(10, 5+5);
 
-        Dummy dummy = new Dummy();
-        assertEquals(60, dummy.operation(5, 10));
-
-        //
+        Gasolinera gasolinera  = new Gasolinera();
+        gasolinera.setRotulo("Rótulo");
+        assertEquals("Rótulo", gasolinera.getRotulo());
     }
 }
