@@ -26,4 +26,12 @@ public class GasolinerasResponse {
     @SerializedName(value="ListaEESSPrecio")    private List<Gasolinera> gasolineras;
     @SerializedName(value="ResultadoConsulta")  private String consulta;
 
+    /**
+     * Returns the number of gas stations in the list
+     * @return the number of gas stations in the list
+     */
+    public int getGasolinerasCount() {
+        return gasolineras != null ? gasolineras.size() : 0;
+    }
+
 }

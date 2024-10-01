@@ -65,7 +65,7 @@ jobs:
         working-directory: ./AndroidProject
         run: chmod +x ./gradlew
 
-      - name: Android UI tests
+      - name: Run Android tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
@@ -74,20 +74,21 @@ jobs:
           target: google_apis
           disable-animations: true
           emulator-options: -no-window -gpu off -no-snapshot -noaudio -no-boot-anim
-          script: ./gradlew clean testDebugUnitTest connectedCheck
-
-      - name: Jacoco and Sonar reports
-        working-directory: ./AndroidProject
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: ./gradlew jacocoTestReport sonar
+          script: ./gradlew clean jacocoTestReport sonar
 
       - name: Android tests reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-artifacts
+          name: test-reports
           path: ./AndroidProject/app/build/reports/
+
+      - name: Android tests outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-outputs
+          path: ./AndroidProject/app/build/outputs/
 
   # build:
   #   name: Build APK

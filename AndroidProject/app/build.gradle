@@ -16,7 +16,7 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*'] // needed to support roboelectric with jacoco
 }
 
-task jacocoTestReport(type: JacocoReport) {
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'connectedAndroidTest']) {
 
     reports {
         xml.required = true
@@ -46,7 +46,7 @@ sonar {
 
         // this property is deprecated, now I use the xml file defined below it
         // property "sonar.jacoco.reportPaths", "${project.buildDir}/jacoco/testDebugUnitTest.exec"
-        property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
+        property "sonar.coverage.jacoco.xmlReportPaths", "${project.buildDir}/reports/jacoco/jacocoTestReport/jacocoTestReport.xml, ${project.buildDir}/reports/coverage/androidTest/debug/connected/report.xml"
     }
 }
 
@@ -84,7 +84,6 @@ android {
         }
         debug {
             testCoverageEnabled true
-            enableUnitTestCoverage true
         }
     }
     compileOptions {

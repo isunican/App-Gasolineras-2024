@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 
 import es.unican.gasolineras.model.Gasolinera;
+import es.unican.gasolineras.model.GasolinerasResponse;
 
 @RunWith(RobolectricTestRunner.class)
 public class ExampleTest {
@@ -19,8 +20,7 @@ public class ExampleTest {
     public void test() {
         Context context = ApplicationProvider.getApplicationContext();
 
-        Gasolinera gasolinera  = new Gasolinera();
-        gasolinera.setRotulo("Rótulo");
-        assertEquals("Rótulo", gasolinera.getRotulo());
+        GasolinerasResponse gasolinerasResponse = new GasolinerasResponse();
+        assertEquals(0, gasolinerasResponse.getGasolinerasCount());
     }
 }

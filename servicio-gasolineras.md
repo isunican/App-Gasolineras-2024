@@ -530,4 +530,4 @@ envío</a></td>
 
 Formato JSON de la respuesta del servicio
 
-![](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/isunican/App-Gasolineras-2024/refs/heads/main/Docs/Models/datos.puml)
+![](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/isunican/App-Gasolineras-2024/refs/heads/main/Docs/Models/data.puml)
