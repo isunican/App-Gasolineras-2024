@@ -44,7 +44,7 @@ jobs:
 
   # Run unit and ui tests together, to capture the test coverage of both
   android-tests:
-    name: Android UI Tests
+    name: Android Tests
     runs-on: macos-13
 
     steps:
